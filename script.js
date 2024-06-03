@@ -1,6 +1,21 @@
 let tableCriada = false;
 
+function verificarForm() {
+    var formulario = document.getElementById("formNotas");
+    var campos = formulario.elements;
 
+    for (var i = 0; i < campos.length; i++) {
+        var campo = campos[i];
+
+        if (campo.tagName === 'INPUT') {
+            if (campo.value === '') {
+                alert('Preencha todos os campos.');
+                return;
+            }
+        }
+    }
+    notasAluno();
+}
 
 function notasAluno(){
     let formulario = document.getElementById("formNotas");
